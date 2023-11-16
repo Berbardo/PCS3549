@@ -8,15 +8,17 @@ extends CharacterBody2D
 
 #If you've allowed 'Resizable' under Display settings you'll need to directly grab this in the _process
 @onready var screen_dimensions = Vector2(get_viewport().size)
+@onready var camera2D = get_viewport().get_camera_2d()
 
 func _ready():
 	update_animation_parameters(starting_direction)
 
 func _process(delta) -> void:
 	# convert player position to UV position
-	var player_position_uv = global_position / screen_dimensions
+	var camera_position = camera2D.get_screen_center_position()
+	var player_position_relative_to_camera_uv = (global_position - camera_position) / screen_dimensions * 2 + Vector2(0.25, 0.25)
 	# Set shader to player position
-	get_parent().get_node("CanvasLayer/Vignette").material.set_shader_parameter("player_position", player_position_uv)
+	get_parent().get_node("CanvasLayer/Vignette").material.set_shader_parameter("player_position", player_position_relative_to_camera_uv)
 
 func _physics_process(_delta):
 	# Get input direction
