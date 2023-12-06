@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7lgccddhxv07"]
+
+[ext_resource type="Texture2D" uid="uid://c1h2u51eawd3g" path="res://Art/Simple Top Down Forest/Cliff.png" id="1_c21vt"]
+[ext_resource type="Script" path="res://Characters/cup.gd" id="1_cc3mu"]
+[ext_resource type="Texture2D" uid="uid://d1tcdx8dnw2mw" path="res://Art/Simple Top Down Forest/Trees.png" id="2_l4qje"]
+[ext_resource type="Texture2D" uid="uid://betdmcis2hg47" path="res://Art/Simple Top Down Forest/RocksnStumps.png" id="3_psy0p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y78ll"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c21vt")
+}],
+"loop": true,
+"name": &"cup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_l4qje")
+}],
+"loop": true,
+"name": &"cup_ball",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_psy0p")
+}],
+"loop": true,
+"name": &"cup_no_ball",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdqtt"]
+size = Vector2(11, 10)
+
+[node name="cup" type="Area2D"]
+script = ExtResource("1_cc3mu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2.98023e-08)
+scale = Vector2(0.0825893, 0.08125)
+sprite_frames = SubResource("SpriteFrames_y78ll")
+animation = &"cup"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cdqtt")

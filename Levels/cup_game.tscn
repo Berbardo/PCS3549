@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfbwg2dmal74n"]
+
+[ext_resource type="Script" path="res://Levels/cup_game.gd" id="1_lan5t"]
+[ext_resource type="PackedScene" uid="uid://b7lgccddhxv07" path="res://Characters/cup.tscn" id="1_u7q0s"]
+
+[node name="cup_game" type="Node2D"]
+script = ExtResource("1_lan5t")
+
+[node name="cup1" parent="." instance=ExtResource("1_u7q0s")]
+unique_name_in_owner = true
+position = Vector2(-150, 0)
+scale = Vector2(7, 7)
+
+[node name="cup0" parent="." instance=ExtResource("1_u7q0s")]
+unique_name_in_owner = true
+scale = Vector2(7, 7)
+
+[node name="cup2" parent="." instance=ExtResource("1_u7q0s")]
+unique_name_in_owner = true
+position = Vector2(150, 0)
+scale = Vector2(7, 7)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, 3.99999)
+scale = Vector2(1.5, 1.5)
+zoom = Vector2(0.535, 0.535)
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
