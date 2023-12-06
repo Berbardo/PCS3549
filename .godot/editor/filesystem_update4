@@ -1,7 +1,9 @@
 res://default_env.tres
+res://Levels/festa_junina.tscn
+res://Shaders/vignette.gdshader
+res://Shaders/vhs.gdshader
+res://Scripts/Actionable.gd
+res://Characters/criança.tscn
 res://Scenes/Menu.tscn
-res://Scripts/Global.gd
-res://Scenes/Note.tscn
-res://Scenes/ArrowButton.tscn
-res://Scenes/End.tscn
-res://Scenes/Global.tscn
+res://actionable.tscn
+res://Characters/criança.gd

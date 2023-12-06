@@ -10,8 +10,18 @@ extends CharacterBody2D
 @onready var screen_dimensions = Vector2(get_viewport().size)
 @onready var camera2D = get_viewport().get_camera_2d()
 
+#Dialogue
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
+
 func _ready():
 	update_animation_parameters(starting_direction)
+
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_accept"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return
 
 func _process(delta) -> void:
 	# convert player position to UV position

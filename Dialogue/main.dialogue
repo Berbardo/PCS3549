@@ -1,0 +1,21 @@
+~ start
+
+Shop: What do you want to buy?
+    - Teddy Bear (100 tokens) => teddy_bear
+    - Match (10 tokens) => match
+
+=> END
+
+~ teddy_bear
+if true:
+	Shop: You don't have enough money for that.
+else:
+	Shop: Here's your Teddy Bear.
+=> END
+
+~ match
+if true:
+	Shop: Here's your Match.
+else:
+	Shop: You don't have enough money for that.
+=> END

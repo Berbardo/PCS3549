@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dpyoothatyyjd"]
+[gd_scene load_steps=27 format=3 uid="uid://dpyoothatyyjd"]
 
 [ext_resource type="PackedScene" uid="uid://q6xju2ye4nr8" path="res://Characters/criança.tscn" id="1_6vvtr"]
 [ext_resource type="Shader" path="res://Shaders/vignette.gdshader" id="1_ehs8q"]
@@ -11,6 +11,9 @@
 [ext_resource type="Shader" path="res://Shaders/vhs.gdshader" id="7_d448r"]
 [ext_resource type="Texture2D" uid="uid://bn6qnb6rpkohs" path="res://Art/PixelWoods/Seasons/spring/terrain tiles.png" id="8_3plbg"]
 [ext_resource type="Texture2D" uid="uid://d1s6ow4s6frk4" path="res://Art/PixelWoods/Seasons/winter/terrain.png" id="9_joebt"]
+[ext_resource type="Texture2D" uid="uid://djcpcygec8ik0" path="res://Art/store2.png" id="12_jvwt4"]
+[ext_resource type="PackedScene" uid="uid://d33q8v7l80c8m" path="res://actionable.tscn" id="13_i2ko7"]
+[ext_resource type="Resource" uid="uid://d3d6hu1ppoj52" path="res://Dialogue/main.dialogue" id="14_xqc03"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sbi2s"]
 texture = ExtResource("2_pk1xe")
@@ -2322,12 +2325,15 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuiu6"]
+size = Vector2(48, 16)
+
 [node name="FestaJunina" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Criança" parent="." instance=ExtResource("1_6vvtr")]
 y_sort_enabled = true
-position = Vector2(0, -119)
+position = Vector2(416, -204)
 scale = Vector2(1.75, 1.75)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Criança"]
@@ -2358,7 +2364,7 @@ layer_2/tile_data = PackedInt32Array()
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -119)
+position = Vector2(416, -204)
 scale = Vector2(1.75, 1.75)
 zoom = Vector2(0.9, 0.9)
 position_smoothing_enabled = true
@@ -2404,3 +2410,22 @@ offset_right = 264.0
 offset_bottom = -359.0
 scale = Vector2(0.5, 0.5)
 text = "<- Minigame 1"
+
+[node name="Shop" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Shop"]
+y_sort_enabled = true
+position = Vector2(415, -246)
+texture = ExtResource("12_jvwt4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop"]
+position = Vector2(415, -232)
+shape = SubResource("RectangleShape2D_kuiu6")
+
+[node name="Actionable" parent="Shop" instance=ExtResource("13_i2ko7")]
+dialogue_resource = ExtResource("14_xqc03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop/Actionable"]
+position = Vector2(415, -232)
+shape = SubResource("RectangleShape2D_kuiu6")
