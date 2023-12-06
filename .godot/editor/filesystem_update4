@@ -1,0 +1,7 @@
+res://default_env.tres
+res://Scenes/Menu.tscn
+res://Scripts/Global.gd
+res://Scenes/Note.tscn
+res://Scenes/ArrowButton.tscn
+res://Scenes/End.tscn
+res://Scenes/Global.tscn
