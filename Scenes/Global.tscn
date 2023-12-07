@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnf41kqiuqaj6"]
+[gd_scene load_steps=5 format=3 uid="uid://bnf41kqiuqaj6"]
 
 [ext_resource type="Script" path="res://Scripts/Global.gd" id="1"]
 [ext_resource type="Shader" path="res://Shaders/vhs.gdshader" id="2_luof7"]
+[ext_resource type="Script" path="res://Scripts/TokenCount.gd" id="3_16qoi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bsbmb"]
 shader = ExtResource("2_luof7")
@@ -41,3 +42,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="TokenCount" type="Label" parent="CanvasLayer/VHS"]
+offset_left = 2.75
+offset_top = 230.75
+offset_right = 210.75
+offset_bottom = 261.75
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 20
+text = "Tokens: "
+script = ExtResource("3_16qoi")

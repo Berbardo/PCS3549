@@ -41,6 +41,8 @@ func _physics_process(_delta):
 	
 	pick_new_state()
 	
+	self.modulate.a = 1 - 0.3 * GameState.completed_games
+	
 func update_animation_parameters(move_input: Vector2):
 	if (move_input != Vector2.ZERO):
 		animation_tree.set("parameters/Walk/blend_position", move_input)

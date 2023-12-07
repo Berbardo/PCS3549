@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://dpyoothatyyjd"]
+[gd_scene load_steps=36 format=3 uid="uid://dpyoothatyyjd"]
 
 [ext_resource type="PackedScene" uid="uid://q6xju2ye4nr8" path="res://Characters/criança.tscn" id="1_6vvtr"]
+[ext_resource type="Script" path="res://Levels/CharacterLight.gd" id="2_kd0uw"]
 [ext_resource type="Texture2D" uid="uid://drplfd76hfqff" path="res://Art/Simple Top Down Forest/GrassNDirt.png" id="2_pk1xe"]
 [ext_resource type="Texture2D" uid="uid://c1h2u51eawd3g" path="res://Art/Simple Top Down Forest/Cliff.png" id="3_yopvj"]
 [ext_resource type="Texture2D" uid="uid://betdmcis2hg47" path="res://Art/Simple Top Down Forest/RocksnStumps.png" id="4_ln3gl"]
@@ -9,11 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://dunb3l1bh5chl" path="res://Art/PixelWoods/Seasons/autumn/terrain1.png" id="7_6vs7k"]
 [ext_resource type="Texture2D" uid="uid://bn6qnb6rpkohs" path="res://Art/PixelWoods/Seasons/spring/terrain tiles.png" id="8_3plbg"]
 [ext_resource type="Texture2D" uid="uid://d1s6ow4s6frk4" path="res://Art/PixelWoods/Seasons/winter/terrain.png" id="9_joebt"]
+[ext_resource type="Script" path="res://Levels/Ascend.gd" id="11_cw4hu"]
 [ext_resource type="Texture2D" uid="uid://djcpcygec8ik0" path="res://Art/store2.png" id="12_jvwt4"]
 [ext_resource type="PackedScene" uid="uid://d33q8v7l80c8m" path="res://actionable.tscn" id="13_i2ko7"]
 [ext_resource type="Resource" uid="uid://d3d6hu1ppoj52" path="res://Dialogue/main.dialogue" id="14_xqc03"]
+[ext_resource type="Texture2D" uid="uid://c1uqpu1flm2p1" path="res://Art/Main_Character.png" id="15_nm3mv"]
 [ext_resource type="AudioStream" uid="uid://dqp8i1xh4hw4h" path="res://Sounds/NDKG_CreepyAtmosphere_Looped - overworld.wav" id="15_vjgdl"]
-[ext_resource type="Script" path="res://Scripts/TokenCount.gd" id="16_3nqvm"]
+[ext_resource type="Script" path="res://Levels/Corpse.gd" id="16_eixbr"]
 [ext_resource type="PackedScene" uid="uid://bxcgcjgf81dr4" path="res://Characters/Campfire.tscn" id="16_sdyfw"]
 [ext_resource type="PackedScene" uid="uid://cotxf4beidr6e" path="res://Characters/ghost.tscn" id="17_wiwtf"]
 
@@ -2309,7 +2312,7 @@ sources/7 = SubResource("TileSetAtlasSource_l7f7t")
 size = Vector2(48, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfwjd"]
-size = Vector2(20, 19.9999)
+size = Vector2(47.9999, 19.9999)
 
 [sub_resource type="Gradient" id="Gradient_qd6bp"]
 interpolation_mode = 2
@@ -2337,6 +2340,7 @@ scale = Vector2(1, 1)
 color = Color(1, 0.878431, 0.670588, 1)
 texture = SubResource("GradientTexture2D_w8jc4")
 texture_scale = 0.6
+script = ExtResource("2_kd0uw")
 
 [node name="FollowCamera" type="RemoteTransform2D" parent="Criança"]
 remote_path = NodePath("../../Camera2D")
@@ -2375,17 +2379,6 @@ zoom = Vector2(3.6, 3.6)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 
-[node name="TokenCount" type="Label" parent="Camera2D"]
-offset_left = -102.0
-offset_top = -69.0
-offset_right = 575.0
-offset_bottom = -38.0
-scale = Vector2(0.3, 0.3)
-theme_override_font_sizes/font_size = 20
-text = "Tokens: "
-horizontal_alignment = 1
-script = ExtResource("16_3nqvm")
-
 [node name="Texts" type="Node" parent="."]
 
 [node name="WASD" type="RichTextLabel" parent="Texts"]
@@ -2396,7 +2389,7 @@ offset_bottom = -132.0
 scale = Vector2(0.5, 0.5)
 text = "WASD to Move"
 
-[node name="WASD2" type="RichTextLabel" parent="Texts"]
+[node name="Spacebar" type="RichTextLabel" parent="Texts"]
 offset_left = -260.0
 offset_top = -165.0
 offset_right = -72.0
@@ -2404,21 +2397,31 @@ offset_bottom = -132.0
 scale = Vector2(0.5, 0.5)
 text = "Spacebar to Interact"
 
+[node name="ESC" type="RichTextLabel" parent="Texts"]
+offset_left = -105.0
+offset_top = -165.0
+offset_right = 83.0
+offset_bottom = -132.0
+scale = Vector2(0.5, 0.5)
+text = "ESC to Exit Minigames"
+
 [node name="Shop" type="RichTextLabel" parent="Texts"]
-offset_left = 248.0
-offset_top = -216.0
-offset_right = 375.0
-offset_bottom = -183.0
+offset_left = 275.0
+offset_top = -222.0
+offset_right = 402.0
+offset_bottom = -189.0
 scale = Vector2(0.5, 0.5)
 text = "Shop ->"
 
-[node name="Shop2" type="RichTextLabel" parent="Texts"]
-offset_left = 137.0
-offset_top = -392.0
-offset_right = 264.0
-offset_bottom = -359.0
+[node name="Ascend" type="RichTextLabel" parent="Texts"]
+offset_left = 185.0
+offset_top = -508.0
+offset_right = 349.0
+offset_bottom = -475.0
 scale = Vector2(0.5, 0.5)
-text = "<- Minigame 1"
+theme_override_colors/default_color = Color(0.509804, 0, 0.00784314, 1)
+text = "you may now ascend"
+script = ExtResource("11_cw4hu")
 
 [node name="Stands" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -2494,7 +2497,6 @@ dialogue_resource = ExtResource("14_xqc03")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ghosts/GhostDDR/Actionable"]
 position = Vector2(135, 461)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sfwjd")
 
 [node name="PointLightDDR" type="PointLight2D" parent="Ghosts/GhostDDR"]
@@ -2517,7 +2519,6 @@ dialogue_start = "cup"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ghosts/GhostCup/Actionable"]
 position = Vector2(135, 463)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sfwjd")
 
 [node name="PointLightDDR" type="PointLight2D" parent="Ghosts/GhostCup"]
@@ -2540,7 +2541,6 @@ dialogue_start = "pachinko"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ghosts/GhostPachinko/Actionable"]
 position = Vector2(135, 459)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sfwjd")
 
 [node name="PointLightDDR" type="PointLight2D" parent="Ghosts/GhostPachinko"]
@@ -2568,6 +2568,52 @@ position = Vector2(1.5, 6)
 color = Color(0.831373, 0.545098, 0.380392, 1)
 texture = SubResource("GradientTexture2D_w8jc4")
 texture_scale = 0.6
+
+[node name="Actionable" parent="Objects/Campfire" instance=ExtResource("13_i2ko7")]
+position = Vector2(0, 6.5)
+scale = Vector2(0.5, 0.5)
+dialogue_resource = ExtResource("14_xqc03")
+dialogue_start = "campfire"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Campfire/Actionable"]
+position = Vector2(1.52588e-05, 1)
+shape = SubResource("RectangleShape2D_sfwjd")
+
+[node name="Corpse" type="Sprite2D" parent="Objects"]
+position = Vector2(144, -170)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("15_nm3mv")
+hframes = 4
+vframes = 12
+frame = 41
+script = ExtResource("16_eixbr")
+
+[node name="Corpse2" type="Sprite2D" parent="Objects"]
+position = Vector2(265, -420)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("15_nm3mv")
+hframes = 4
+vframes = 12
+frame = 46
+script = ExtResource("16_eixbr")
+
+[node name="Corpse3" type="Sprite2D" parent="Objects"]
+position = Vector2(276, -723)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("15_nm3mv")
+hframes = 4
+vframes = 12
+frame = 33
+script = ExtResource("16_eixbr")
+
+[node name="Corpse4" type="Sprite2D" parent="Objects"]
+position = Vector2(559, -400)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("15_nm3mv")
+hframes = 4
+vframes = 12
+frame = 38
+script = ExtResource("16_eixbr")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)

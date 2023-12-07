@@ -62,6 +62,10 @@ func _input(event):
 			show_cup(false)
 			steps = 3
 			
+	if event.is_action("escape"):
+		if get_tree().change_scene_to_file("res://Levels/festa_junina.tscn") != OK:
+			print ("Error changing scene to Overworld")
+			
 			
 
 func cup_open(has_ball : bool):
