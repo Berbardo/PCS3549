@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7lgccddhxv07"]
+[gd_scene load_steps=7 format=3 uid="uid://n5c68l8likjd"]
 
 [ext_resource type="Texture2D" uid="uid://c1h2u51eawd3g" path="res://Art/Simple Top Down Forest/Cliff.png" id="1_c21vt"]
 [ext_resource type="Script" path="res://Characters/cup.gd" id="1_cc3mu"]

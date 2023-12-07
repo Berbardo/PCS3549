@@ -1,12 +1,15 @@
 extends Area2D
 var BUTTON_LEFT = 1
 
+signal cup_clicked(open)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 var has_ball = false
 var canclick = false
+var open = false
 var t = 0.0
 var move
 var  p0 = get_global_position()
@@ -38,10 +41,19 @@ func _change_positon(final: Vector2, up: int):
 func _input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed and canclick:
-			print(has_ball)
-			if has_ball:
-				$AnimatedSprite2D.animation =  "cup_ball"
-			else:
-				$AnimatedSprite2D.animation =  "cup_no_ball"
-			$AnimatedSprite2D.play()
+			click_cup()
+			
 	
+func click_cup():
+	if !open:
+		cup_clicked.emit(has_ball)
+		print(has_ball)
+		if has_ball:
+			$AnimatedSprite2D.animation =  "cup_ball"
+		else:
+			$AnimatedSprite2D.animation =  "cup_no_ball"
+		$AnimatedSprite2D.play()
+		open = true
+	else: 
+		$AnimatedSprite2D.animation =  "cup"
+		open = false
