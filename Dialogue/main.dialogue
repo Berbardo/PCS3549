@@ -1,4 +1,4 @@
-~ start
+~ shop
 
 Shop: What do you want to buy?
     - Teddy Bear (100 tokens) => teddy_bear
@@ -24,5 +24,13 @@ else:
 Minigame: Do you wish to play this game right now?
   - Yes
 	do get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+  - No
+=> END
+
+
+~ cup
+Minigame: Do you wish to play this game right now?
+  - Yes
+	do get_tree().change_scene_to_file("res://Levels/cup_game.tscn")
   - No
 => END

@@ -22,6 +22,7 @@ expand_margin_right = 8.0
 region_rect = Rect2(0, 0, 16, 16)
 
 [node name="Menu" type="Node2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1")
 
 [node name="Start_Button" type="TextureButton" parent="."]

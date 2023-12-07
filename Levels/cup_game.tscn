@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxmqcmgwqsxj1"]
+[gd_scene load_steps=3 format=3 uid="uid://b76l7c7c1aim6"]
 
 [ext_resource type="Script" path="res://Levels/cup_game.gd" id="1_lan5t"]
-[ext_resource type="PackedScene" uid="uid://n5c68l8likjd" path="res://Characters/cup.tscn" id="1_u7q0s"]
+[ext_resource type="PackedScene" path="res://Characters/cup.tscn" id="1_u7q0s"]
 
 [node name="cup_game" type="Node2D"]
 script = ExtResource("1_lan5t")
@@ -23,7 +23,7 @@ scale = Vector2(7, 7)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(2, 3.99999)
 scale = Vector2(1.5, 1.5)
-zoom = Vector2(0.535, 0.535)
+zoom = Vector2(2.14, 2.14)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 

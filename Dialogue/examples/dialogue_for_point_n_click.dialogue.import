@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://c21ogqvaf7u0p"
+path="res://.godot/imported/dialogue_for_point_n_click.dialogue-e12562ffba1d0a93e267a73f4fe075c8.tres"
+
+[deps]
+
+source_file="res://Dialogue/examples/dialogue_for_point_n_click.dialogue"
+dest_files=["res://.godot/imported/dialogue_for_point_n_click.dialogue-e12562ffba1d0a93e267a73f4fe075c8.tres"]
+
+[params]
+
+defaults=true

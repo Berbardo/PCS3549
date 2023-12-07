@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/End.gd" id="6"]
 
 [node name="End" type="Node2D"]
+scale = Vector2(4, 4)
 script = ExtResource("6")
 
 [node name="PlayAgain" type="TextureButton" parent="."]
