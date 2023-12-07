@@ -1,9 +1,10 @@
+
 extends Node2D
 
-var BallScene = preload("./ball.tscn")
-var EndPanelScene = preload("./end_panel.tscn")
-var GameOverPanelScene = preload("./game_over_panel.tscn")
-var WinPanelScene = preload("./win_panel.tscn")
+var BallScene = preload("res://src/ball.tscn")
+var EndPanelScene = preload("res://src/end_panel.tscn")
+var GameOverPanelScene = preload("res://src/game_over_panel.tscn")
+var WinPanelScene = preload("res://src/win_panel.tscn")
 var MAX_SPEED = 3000
 var strength = 0
 

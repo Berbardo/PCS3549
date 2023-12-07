@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmv5sqjl3fo88"]
 
-[ext_resource type="Texture2D" uid="uid://cw3kdj02wc3cr" path="res://Levels/Pachinko/assets/nail.png" id="1_3e18a"]
-[ext_resource type="Script" path="res://Levels/Pachinko/src/nail.gd" id="1_wxln8"]
+[ext_resource type="Script" path="res://src/nail.gd" id="1_a24dh"]
+[ext_resource type="Texture2D" uid="uid://cw3kdj02wc3cr" path="res://assets/nail.png" id="2_y4f6s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54mq5"]
 radius = 7.07107
 
 [node name="Nail" type="StaticBody2D"]
 collision_layer = 16
-script = ExtResource("1_wxln8")
+script = ExtResource("1_a24dh")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_54mq5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3e18a")
+texture = ExtResource("2_y4f6s")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4096

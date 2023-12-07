@@ -1,7 +1,6 @@
 res://default_env.tres
-res://Levels/festa_junina.tscn
+res://Levels/pachinko.tscn
 res://Shaders/vhs.gdshader
-res://Scripts/Actionable.gd
 res://Shaders/vignette.gdshader
 res://Characters/Campfire.tscn
 res://Levels/cup_game.tscn
