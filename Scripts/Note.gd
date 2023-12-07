@@ -1,12 +1,12 @@
 extends Area2D
 
-const TARGET_Y = 164
+const TARGET_Y = 187
 const SPAWN_Y = -16
 const DIST_TO_TARGET = TARGET_Y - SPAWN_Y
 
-const LEFT_LANE_SPAWN = Vector2(120, SPAWN_Y)
-const CENTRE_LANE_SPAWN = Vector2(160, SPAWN_Y)
-const RIGHT_LANE_SPAWN = Vector2(200, SPAWN_Y)
+const LEFT_LANE_SPAWN = Vector2(180, SPAWN_Y)
+const CENTRE_LANE_SPAWN = Vector2(220, SPAWN_Y)
+const RIGHT_LANE_SPAWN = Vector2(260, SPAWN_Y)
 
 var speed = 0
 var hit = false
