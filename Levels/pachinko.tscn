@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://djpyer0o2dij2"]
 
-[ext_resource type="Script" path="res://Levels/pachinko.gd" id="1_yi8op"]
-[ext_resource type="Texture2D" uid="uid://cfavw15tnhci4" path="res://assets/planks.jpg" id="2_2eskj"]
-[ext_resource type="Script" path="res://src/polygon_static_body.gd" id="3_quka5"]
-[ext_resource type="PackedScene" uid="uid://bmv5sqjl3fo88" path="res://src/nail.tscn" id="4_id8p2"]
-[ext_resource type="FontFile" uid="uid://blna6hdacr5yk" path="res://assets/fonts/Noto_Sans_SC/NotoSansSC-Bold.otf" id="5_nvki0"]
-[ext_resource type="AudioStream" uid="uid://c3q21ugn6f6k1" path="res://assets/sounds/wee-willie-winkie-lullaby-horr.wav" id="6_wnlwl"]
+[ext_resource type="Script" path="res://Levels/pachinko.gd" id="1_6nk8g"]
+[ext_resource type="Texture2D" uid="uid://cfavw15tnhci4" path="res://assets/planks.jpg" id="2_irrd2"]
+[ext_resource type="Script" path="res://src/polygon_static_body.gd" id="3_af0ga"]
+[ext_resource type="PackedScene" uid="uid://bmv5sqjl3fo88" path="res://src/nail.tscn" id="4_mq1ra"]
+[ext_resource type="FontFile" uid="uid://blna6hdacr5yk" path="res://assets/fonts/Noto_Sans_SC/NotoSansSC-Bold.otf" id="5_e32w1"]
+[ext_resource type="AudioStream" uid="uid://c3q21ugn6f6k1" path="res://assets/sounds/wee-willie-winkie-lullaby-horr.wav" id="6_pr35a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n418"]
 bg_color = Color(0.25098, 0.152941, 0.317647, 1)
@@ -29,12 +29,12 @@ size = Vector2(25, 14)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnu7a"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_yi8op")
+script = ExtResource("1_6nk8g")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 959.0
-texture = ExtResource("2_2eskj")
+texture = ExtResource("2_irrd2")
 expand_mode = 1
 
 [node name="InitialField" type="Polygon2D" parent="."]
@@ -43,7 +43,7 @@ rotation = -0.000145291
 scale = Vector2(0.523979, 1.26168)
 color = Color(0.211765, 0.180392, 0.12549, 1)
 polygon = PackedVector2Array(622.031, 374.142, 621.916, 703.861, 713.521, 710.207, 713.523, 703.866, 637.186, 697.521, 637.304, 361.461)
-script = ExtResource("3_quka5")
+script = ExtResource("3_af0ga")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="InitialField"]
 collision_layer = 16
@@ -55,7 +55,7 @@ scale = Vector2(0.992775, 1)
 color = Color(0.0401103, 0.157235, 0.067041, 1)
 antialiased = true
 polygon = PackedVector2Array(1148.27, 648, 1147.26, 584, 1147.26, 488, 1147.26, 360, 1139.21, 216, 1115.03, 144, 1074.74, 112, 1011.28, 96, 938.758, 96, 858.176, 96, 737.302, 96, 624.487, 96, 567.072, 104, 526.781, 136, 494.549, 208, 494.549, 312, 494.549, 504, 494.549, 640, 494.548, 958, 173.227, 958, 172.22, -8, 1461.54, -8, 1461.54, 248.118, 1459.52, 953, 1147.26, 954)
-script = ExtResource("3_quka5")
+script = ExtResource("3_af0ga")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Wall"]
 
@@ -71,86 +71,86 @@ fill_mode = 3
 [node name="RewardX1" type="Node2D" parent="."]
 position = Vector2(336, 24)
 
-[node name="Nail1" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail1" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(218, 251)
 
-[node name="Nail5" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail5" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(154, 368)
 
-[node name="Nail10" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail10" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(375, 361)
 
-[node name="Nail11" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail11" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(355, 377)
 
-[node name="Nail12" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail12" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(335, 399)
 
-[node name="Nail13" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail13" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(314, 422)
 
-[node name="Nail14" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail14" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(299, 447)
 
-[node name="Nail15" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail15" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(291, 479)
 
-[node name="Nail19" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail19" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(323, 472)
 
-[node name="Nail20" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail20" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(306, 506)
 
-[node name="Nail21" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail21" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(273, 514)
 
-[node name="Nail17" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail17" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(248, 492)
 
-[node name="Nail18" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail18" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(213, 476)
 
-[node name="Nail16" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail16" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(265, 462)
 
-[node name="Nail6" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail6" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(184, 377)
 
-[node name="Nail22" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail22" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(277, 396)
 
-[node name="Nail23" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail23" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(243, 357)
 
-[node name="Nail7" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail7" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(208, 399)
 
-[node name="Nail8" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail8" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(228, 423)
 
-[node name="Nail9" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail9" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(235, 451)
 
-[node name="Nail2" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail2" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(250, 264)
 
-[node name="Nail26" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail26" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(191, 305)
 
-[node name="Nail27" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail27" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(223, 326)
 
-[node name="Nail3" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail3" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(279, 281)
 
-[node name="Nail4" parent="RewardX1" instance=ExtResource("4_id8p2")]
+[node name="Nail4" parent="RewardX1" instance=ExtResource("4_mq1ra")]
 position = Vector2(305, 307)
 
 [node name="RoundPanelX1" type="Polygon2D" parent="RewardX1"]
 position = Vector2(186.425, 434.524)
 scale = Vector2(0.127073, 0.373774)
 polygon = PackedVector2Array(429.479, 284.868, 560.206, 357.104, 738.454, 357.104, 846.562, 284.868, 799.344, 284.867, 712.779, 346.402, 571.129, 346.402, 457.916, 284.868)
-script = ExtResource("3_quka5")
+script = ExtResource("3_af0ga")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RewardX1/RoundPanelX1"]
 collision_layer = 16
@@ -175,7 +175,7 @@ offset_bottom = 442.0
 theme_override_colors/font_color = Color(0.745098, 0.466667, 0.168627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("5_nvki0")
+theme_override_fonts/font = ExtResource("5_e32w1")
 theme_override_font_sizes/font_size = 50
 text = "Hold Space"
 horizontal_alignment = 1
@@ -210,7 +210,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(0.909804, 0.756863, 0.439216, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("5_nvki0")
+theme_override_fonts/normal_font = ExtResource("5_e32w1")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "[center]LIVES:"
@@ -218,7 +218,7 @@ fit_content = true
 scroll_active = false
 
 [node name="BgmPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_wnlwl")
+stream = ExtResource("6_pr35a")
 volume_db = 5.0
 pitch_scale = 0.75
 autoplay = true

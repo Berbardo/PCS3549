@@ -43,7 +43,7 @@ s̶̬̠̅̈́͆̓̉̓̂͛͋͘҉̸̡̢̝͖͖̮̈͆̄̓̽̄͘t̶̡̨̛̘͍̗̀̑͘҉
 ẉ̷̠̙̭̲̋́̈́̆̌̕͜҉̴̠̭̋i̷͇̥͇̹̬̦̥̓̃̔҉̶̨͔̠͉͔̼͖̆́͌͜l̴̨̛̮̰̼̭̹͈̬̇̅͊͆̈̋͋̋͝҉̴̛͍̦̹̪̤͙͗͌̇l̶̞̥͕͈̲͇̈́̓͂̽̊͛҉̸̧̗̤̘̝͈̼̈́̃i̸̤̲̪͇̥̠̬͗̄́̈҉̷̳͓̠͆̀͐̍͗̉̕͜͠͠a̴̖̪̝̝̮̯̐҉̷͓̮͍̤̲̏̌͂̌̂̿̕͜͝m̵͉̃҉̸̛̛̤̜͂̈́̋͒͠: Do you wish to play this game right now?
   - Yes
 	do GameState.pachinko = true
-	do get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+	do get_tree().change_scene_to_file("res://Levels/pachinko.tscn")
   - No
 => END
 

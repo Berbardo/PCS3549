@@ -46,7 +46,12 @@ func create_ball():
 	TweenUtils.show(node, 0.1, { "scale": false, "modulate": true })
 	TweenUtils.show($Strength, 0.2)
 
-func _process(delta):
+func _input(event):
+	if event.is_action("escape"):
+		if get_tree().change_scene_to_file("res://Levels/festa_junina.tscn") != OK:
+			print ("Error changing scene to Overworld")
+
+func _process(delta):Menu
 	$GUI/Panel/HBoxContainer2/Current.text = "[center]LIVES: %s" % str(self.current_marbles) + "[/center]"
 
 	if $Balls.get_child_count() <= 0:
@@ -70,7 +75,6 @@ func _process(delta):
 		node.linear_velocity.y = -MAX_SPEED * strength
 		print_debug(node.linear_velocity.y)
 		strength = 0
-	
 	$Strength.value = strength * 100
 
 func show_game_over():
@@ -84,7 +88,8 @@ func show_game_over():
 		TweenUtils.audio_fade_out($BgmPlayer, 0.3)
 		TweenUtils.hide(panel)
 #		TweenUtils.hide($GUI, 0.3, { "modulate": true, "scale": false})\
-		SceneChanger.change_scene("res://src/main.tscn"))
+		if get_tree().change_scene_to_file("res://Levels/pachinko.tscn") != OK:
+			print ("Error changing scene to pachinko"))
 
 func win():
 	var panel = self.WinPanelScene.instantiate()
@@ -95,6 +100,7 @@ func win():
 	panel.get_node("MarginContainer/VBoxContainer/HBoxContainer/Yes").connect("pressed", func ():
 		TweenUtils.audio_fade_out($BgmPlayer, 0.3)
 		TweenUtils.hide(panel)
-		SceneChanger.change_scene("res://src/main.tscn"))
+		if get_tree().change_scene_to_file("res://Levels/festa_junina.tscn") != OK:
+			print ("Error changing scene to pachinko"))
 		# Change to load next scene
 
