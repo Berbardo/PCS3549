@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://clhyc3deheg1h"]
+
+[ext_resource type="Script" path="res://src/ball.gd" id="1_eykj7"]
+[ext_resource type="Texture2D" uid="uid://c3jqplt1tuwd6" path="res://assets/ball.png" id="2_8nnn3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkqim"]
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v64ex"]
+radius = 8.0
+
+[node name="Ball" type="RigidBody2D"]
+collision_mask = 17
+mass = 0.1
+gravity_scale = 0.8
+script = ExtResource("1_eykj7")
+metadata/_edit_group_ = true
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gkqim")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_v64ex")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8nnn3")
+centered = false
