@@ -51,7 +51,7 @@ func _input(event):
 		if get_tree().change_scene_to_file("res://Levels/festa_junina.tscn") != OK:
 			print ("Error changing scene to Overworld")
 
-func _process(delta):Menu
+func _process(delta):
 	$GUI/Panel/HBoxContainer2/Current.text = "[center]LIVES: %s" % str(self.current_marbles) + "[/center]"
 
 	if $Balls.get_child_count() <= 0:
