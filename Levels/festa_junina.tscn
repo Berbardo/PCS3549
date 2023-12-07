@@ -2570,7 +2570,6 @@ texture = SubResource("GradientTexture2D_w8jc4")
 texture_scale = 0.6
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
