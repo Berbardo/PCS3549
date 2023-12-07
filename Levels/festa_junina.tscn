@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dpyoothatyyjd"]
+[gd_scene load_steps=33 format=3 uid="uid://dpyoothatyyjd"]
 
 [ext_resource type="PackedScene" uid="uid://q6xju2ye4nr8" path="res://Characters/criança.tscn" id="1_6vvtr"]
 [ext_resource type="Texture2D" uid="uid://drplfd76hfqff" path="res://Art/Simple Top Down Forest/GrassNDirt.png" id="2_pk1xe"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://d33q8v7l80c8m" path="res://actionable.tscn" id="13_i2ko7"]
 [ext_resource type="Resource" uid="uid://d3d6hu1ppoj52" path="res://Dialogue/main.dialogue" id="14_xqc03"]
 [ext_resource type="AudioStream" uid="uid://dqp8i1xh4hw4h" path="res://Sounds/NDKG_CreepyAtmosphere_Looped - overworld.wav" id="15_vjgdl"]
+[ext_resource type="Script" path="res://Scripts/TokenCount.gd" id="16_3nqvm"]
 [ext_resource type="PackedScene" uid="uid://bxcgcjgf81dr4" path="res://Characters/Campfire.tscn" id="16_sdyfw"]
 [ext_resource type="PackedScene" uid="uid://cotxf4beidr6e" path="res://Characters/ghost.tscn" id="17_wiwtf"]
 
@@ -2307,9 +2308,6 @@ sources/7 = SubResource("TileSetAtlasSource_l7f7t")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuiu6"]
 size = Vector2(48, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbgi2"]
-size = Vector2(20, 41)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sfwjd"]
 size = Vector2(20, 19.9999)
 
@@ -2324,13 +2322,15 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbgi2"]
+size = Vector2(20, 41)
+
 [node name="FestaJunina" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Criança" parent="." instance=ExtResource("1_6vvtr")]
 position = Vector2(-401, -123)
 scale = Vector2(1.75, 1.75)
-move_speed = 300.0
 
 [node name="PointLight2D" type="PointLight2D" parent="Criança"]
 scale = Vector2(1, 1)
@@ -2375,6 +2375,17 @@ zoom = Vector2(3.6, 3.6)
 position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 
+[node name="TokenCount" type="Label" parent="Camera2D"]
+offset_left = -102.0
+offset_top = -69.0
+offset_right = 575.0
+offset_bottom = -38.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 20
+text = "Tokens: "
+horizontal_alignment = 1
+script = ExtResource("16_3nqvm")
+
 [node name="Texts" type="Node" parent="."]
 
 [node name="WASD" type="RichTextLabel" parent="Texts"]
@@ -2409,63 +2420,157 @@ offset_bottom = -359.0
 scale = Vector2(0.5, 0.5)
 text = "<- Minigame 1"
 
-[node name="DDR" type="StaticBody2D" parent="."]
+[node name="Stands" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="DDR" type="StaticBody2D" parent="Stands"]
 y_sort_enabled = true
 position = Vector2(-194, -470)
 
-[node name="Sprite2D" type="Sprite2D" parent="DDR"]
+[node name="Sprite2D" type="Sprite2D" parent="Stands/DDR"]
 y_sort_enabled = true
 texture = ExtResource("12_jvwt4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DDR"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stands/DDR"]
 position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_kuiu6")
 
-[node name="Cup" type="StaticBody2D" parent="."]
+[node name="Cup" type="StaticBody2D" parent="Stands"]
 y_sort_enabled = true
 position = Vector2(624, -566)
 
-[node name="Sprite2D" type="Sprite2D" parent="Cup"]
+[node name="Sprite2D" type="Sprite2D" parent="Stands/Cup"]
 y_sort_enabled = true
 texture = ExtResource("12_jvwt4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cup"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stands/Cup"]
 position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_kuiu6")
 
-[node name="Pachinko" type="StaticBody2D" parent="."]
+[node name="Pachinko" type="StaticBody2D" parent="Stands"]
 y_sort_enabled = true
 position = Vector2(240, -854)
 
-[node name="Sprite2D" type="Sprite2D" parent="Pachinko"]
+[node name="Sprite2D" type="Sprite2D" parent="Stands/Pachinko"]
 y_sort_enabled = true
 texture = ExtResource("12_jvwt4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pachinko"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stands/Pachinko"]
 position = Vector2(0, 14)
 shape = SubResource("RectangleShape2D_kuiu6")
 
-[node name="Shop" type="StaticBody2D" parent="."]
+[node name="Shop" type="StaticBody2D" parent="Stands"]
 y_sort_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="Shop"]
+[node name="Sprite2D" type="Sprite2D" parent="Stands/Shop"]
 y_sort_enabled = true
 position = Vector2(415, -246)
 texture = ExtResource("12_jvwt4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stands/Shop"]
 position = Vector2(415, -232)
 shape = SubResource("RectangleShape2D_kuiu6")
 
-[node name="Actionable" parent="Shop" instance=ExtResource("13_i2ko7")]
+[node name="Actionable" parent="Stands/Shop" instance=ExtResource("13_i2ko7")]
 position = Vector2(415, -232)
 dialogue_resource = ExtResource("14_xqc03")
 dialogue_start = "shop"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop/Actionable"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stands/Shop/Actionable"]
 shape = SubResource("RectangleShape2D_kuiu6")
 
+[node name="Ghosts" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="GhostDDR" parent="Ghosts" instance=ExtResource("17_wiwtf")]
+modulate = Color(1, 0.741176, 0.992157, 0.478431)
+position = Vector2(-157, -437)
+scale = Vector2(1.75, 1.75)
+
+[node name="Actionable" parent="Ghosts/GhostDDR" instance=ExtResource("13_i2ko7")]
+position = Vector2(-77.7143, -260)
+scale = Vector2(0.571429, 0.571429)
+dialogue_resource = ExtResource("14_xqc03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghosts/GhostDDR/Actionable"]
+position = Vector2(135, 461)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sfwjd")
+
+[node name="PointLightDDR" type="PointLight2D" parent="Ghosts/GhostDDR"]
+position = Vector2(1.52588e-05, 0.571457)
+scale = Vector2(1.14286, 1.14286)
+color = Color(0.858824, 0.396078, 0.85098, 1)
+energy = 0.8
+texture = SubResource("GradientTexture2D_nbi4w")
+
+[node name="GhostCup" parent="Ghosts" instance=ExtResource("17_wiwtf")]
+modulate = Color(1, 1, 0, 0.478431)
+position = Vector2(579, -534)
+scale = Vector2(1.75, 1.75)
+
+[node name="Actionable" parent="Ghosts/GhostCup" instance=ExtResource("13_i2ko7")]
+position = Vector2(-77.7143, -260)
+scale = Vector2(0.571429, 0.571429)
+dialogue_resource = ExtResource("14_xqc03")
+dialogue_start = "cup"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghosts/GhostCup/Actionable"]
+position = Vector2(135, 463)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sfwjd")
+
+[node name="PointLightDDR" type="PointLight2D" parent="Ghosts/GhostCup"]
+position = Vector2(1.52588e-05, 0.571457)
+scale = Vector2(1.14286, 1.14286)
+color = Color(0.988235, 0.87451, 0, 0.854902)
+energy = 0.5
+texture = SubResource("GradientTexture2D_nbi4w")
+
+[node name="GhostPachinko" parent="Ghosts" instance=ExtResource("17_wiwtf")]
+modulate = Color(0, 1, 0.933333, 0.478431)
+position = Vector2(198, -822)
+scale = Vector2(1.75, 1.75)
+
+[node name="Actionable" parent="Ghosts/GhostPachinko" instance=ExtResource("13_i2ko7")]
+position = Vector2(-77.7143, -260)
+scale = Vector2(0.571429, 0.571429)
+dialogue_resource = ExtResource("14_xqc03")
+dialogue_start = "pachinko"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghosts/GhostPachinko/Actionable"]
+position = Vector2(135, 459)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_sfwjd")
+
+[node name="PointLightDDR" type="PointLight2D" parent="Ghosts/GhostPachinko"]
+position = Vector2(1.52588e-05, 0.571457)
+scale = Vector2(1.14286, 1.14286)
+color = Color(0, 0.988235, 0.92549, 0.854902)
+energy = 0.5
+texture = SubResource("GradientTexture2D_nbi4w")
+
+[node name="Objects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="InvisibleWall" type="StaticBody2D" parent="Objects"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/InvisibleWall"]
+position = Vector2(-474, -119.5)
+shape = SubResource("RectangleShape2D_mbgi2")
+
+[node name="Campfire" parent="Objects" instance=ExtResource("16_sdyfw")]
+position = Vector2(225, -467)
+scale = Vector2(2, 2)
+
+[node name="PointLight2D" type="PointLight2D" parent="Objects/Campfire"]
+position = Vector2(1.5, 6)
+color = Color(0.831373, 0.545098, 0.380392, 1)
+texture = SubResource("GradientTexture2D_w8jc4")
+texture_scale = 0.6
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -2473,86 +2578,4 @@ stream = ExtResource("15_vjgdl")
 volume_db = -10.306
 autoplay = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-474, -119.5)
-shape = SubResource("RectangleShape2D_mbgi2")
-
-[node name="Campfire" parent="." instance=ExtResource("16_sdyfw")]
-position = Vector2(225, -467)
-scale = Vector2(2, 2)
-
-[node name="PointLight2D" type="PointLight2D" parent="Campfire"]
-position = Vector2(1.5, 6)
-color = Color(0.831373, 0.545098, 0.380392, 1)
-texture = SubResource("GradientTexture2D_w8jc4")
-texture_scale = 0.6
-
-[node name="GhostDDR" parent="." instance=ExtResource("17_wiwtf")]
-modulate = Color(1, 0.741176, 0.992157, 0.478431)
-position = Vector2(-157, -437)
-scale = Vector2(1.75, 1.75)
-
-[node name="Actionable" parent="GhostDDR" instance=ExtResource("13_i2ko7")]
-position = Vector2(-77.7143, -260)
-scale = Vector2(0.571429, 0.571429)
-dialogue_resource = ExtResource("14_xqc03")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GhostDDR/Actionable"]
-position = Vector2(135, 461)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_sfwjd")
-
-[node name="PointLightDDR" type="PointLight2D" parent="GhostDDR"]
-position = Vector2(1.52588e-05, 0.571457)
-scale = Vector2(1.14286, 1.14286)
-color = Color(0.858824, 0.396078, 0.85098, 1)
-energy = 0.8
-texture = SubResource("GradientTexture2D_nbi4w")
-
-[node name="GhostCup" parent="." instance=ExtResource("17_wiwtf")]
-modulate = Color(1, 1, 0, 0.478431)
-position = Vector2(579, -534)
-scale = Vector2(1.75, 1.75)
-
-[node name="Actionable" parent="GhostCup" instance=ExtResource("13_i2ko7")]
-position = Vector2(-77.7143, -260)
-scale = Vector2(0.571429, 0.571429)
-dialogue_resource = ExtResource("14_xqc03")
-dialogue_start = "cup"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GhostCup/Actionable"]
-position = Vector2(135, 463)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_sfwjd")
-
-[node name="PointLightDDR" type="PointLight2D" parent="GhostCup"]
-position = Vector2(1.52588e-05, 0.571457)
-scale = Vector2(1.14286, 1.14286)
-color = Color(0.988235, 0.87451, 0, 0.854902)
-energy = 0.5
-texture = SubResource("GradientTexture2D_nbi4w")
-
-[node name="GhostPachinko" parent="." instance=ExtResource("17_wiwtf")]
-modulate = Color(0, 1, 0.933333, 0.478431)
-position = Vector2(198, -822)
-scale = Vector2(1.75, 1.75)
-
-[node name="Actionable" parent="GhostPachinko" instance=ExtResource("13_i2ko7")]
-position = Vector2(-77.7143, -260)
-scale = Vector2(0.571429, 0.571429)
-dialogue_resource = ExtResource("14_xqc03")
-dialogue_start = "pachinko"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GhostPachinko/Actionable"]
-position = Vector2(135, 459)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_sfwjd")
-
-[node name="PointLightDDR" type="PointLight2D" parent="GhostPachinko"]
-position = Vector2(1.52588e-05, 0.571457)
-scale = Vector2(1.14286, 1.14286)
-color = Color(0, 0.988235, 0.92549, 0.854902)
-energy = 0.5
-texture = SubResource("GradientTexture2D_nbi4w")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]

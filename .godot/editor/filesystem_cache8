@@ -1,7 +1,7 @@
 3acdcc5cb6df755358dde907981ccea8
-::res://::1701962298
-actionable.tscn::PackedScene::9183383806109977774::1701962298::0::1::::<><>::res://Scripts/Actionable.gd
-default_env.tres::Environment::4083633603590301435::1701962436::0::1::::<><>::
+::res://::1701966518
+actionable.tscn::PackedScene::9183383806109977774::1701964226::0::1::::<><>::res://Scripts/Actionable.gd
+default_env.tres::Environment::4083633603590301435::1701966518::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1701892605::0::1::::<><>::
 icon.png::CompressedTexture2D::4993842451170295723::1701892605::1701956722::1::::<><>::
 icon.svg::CompressedTexture2D::5836832077397176398::1699654941::1699654947::1::::<><>::
@@ -110,15 +110,15 @@ Cliff.png::CompressedTexture2D::6613878636984284922::1648716614::1699667125::1::
 GrassNDirt.png::CompressedTexture2D::8384115083548565351::1648719795::1699667125::1::::<><>::
 RocksnStumps.png::CompressedTexture2D::2706602934336861882::1648713990::1699667125::1::::<><>::
 Trees.png::CompressedTexture2D::9023523213532702522::1648715846::1699667125::1::::<><>::
-::res://Characters/::1701962298
-Campfire.tscn::PackedScene::4005261198671653995::1701954740::0::1::::<><>::uid://bvweor2bt30hi::::res://Art/campfire-sprites-without-bg.png
+::res://Characters/::1701966517
+Campfire.tscn::PackedScene::4005261198671653995::1701966517::0::1::::<><>::uid://bvweor2bt30hi::::res://Art/campfire-sprites-without-bg.png
 criança.gd::GDScript::-1::1701962166::0::1::::<>CharacterBody2D<>::
-criança.tscn::PackedScene::1188430864836817023::1701960692::0::1::::<><>::res://Characters/criança.gd<>uid://c1uqpu1flm2p1::::res://Art/Main_Character.png
+criança.tscn::PackedScene::1188430864836817023::1701964227::0::1::::<><>::res://Characters/criança.gd<>uid://c1uqpu1flm2p1::::res://Art/Main_Character.png
 cup.gd::GDScript::-1::1701918059::0::1::::<>Area2D<>::
 cup.tscn::PackedScene::-1::1701918059::0::1::::<><>::
-ghost.tscn::PackedScene::5796115300363473982::1701962298::0::1::::<><>::uid://daymfunnbgxw4::::res://Art/Pixel-RPG_Prototype_v003/Sprites/Prototype/Prototype_Worksheet.png
-::res://Dialogue/::1701923866
-main.dialogue::Resource::9132638624873539707::1701962457::1701962457::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+ghost.tscn::PackedScene::5796115300363473982::1701964227::0::1::::<><>::uid://daymfunnbgxw4::::res://Art/Pixel-RPG_Prototype_v003/Sprites/Prototype/Prototype_Worksheet.png
+::res://Dialogue/::1701966515
+main.dialogue::Resource::9132638624873539707::1701966549::1701966549::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 ::res://Dialogue/examples/::1701922244
 dialogue.dialogue::Resource::7066822178496369009::1701922221::1701922244::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 dialogue_for_csharp.dialogue::Resource::6013389457857277081::1701922222::1701922244::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
@@ -207,10 +207,10 @@ arrow_left_frames.tres::SpriteFrames::-1::1701892605::0::1::::<><>::res://Sprite
 arrow_right_frames.tres::SpriteFrames::-1::1701892605::0::1::::<><>::res://Sprites/game/arrow_button/right/arrow_button_right1.png<>res://Sprites/game/arrow_button/right/arrow_button_right2.png
 arrow_up_frames.tres::SpriteFrames::-1::1701892605::0::1::::<><>::res://Sprites/game/arrow_button/up/arrow_button_up2.png<>res://Sprites/game/arrow_button/up/arrow_button_up1.png
 note_frames.tres::SpriteFrames::-1::1701892605::0::1::::<><>::res://Sprites/game/arrow_button/up/arrow_button_up3.png<>res://Sprites/game/arrow_button/right/arrow_button_right3.png<>res://Sprites/game/arrow_button/left/arrow_button_left3.png
-::res://Levels/::1701962298
+::res://Levels/::1701966517
 cup_game.gd::GDScript::-1::1701918059::0::1::::<>Node2D<>::
-cup_game.tscn::PackedScene::4697184577417445047::1701962298::0::1::::<><>::res://Levels/cup_game.gd<>res://Characters/cup.tscn
-festa_junina.tscn::PackedScene::8262515819544267973::1701962437::0::1::::<><>::uid://q6xju2ye4nr8::::res://Characters/criança.tscn<>uid://drplfd76hfqff::::res://Art/Simple Top Down Forest/GrassNDirt.png<>uid://c1h2u51eawd3g::::res://Art/Simple Top Down Forest/Cliff.png<>uid://betdmcis2hg47::::res://Art/Simple Top Down Forest/RocksnStumps.png<>uid://d1tcdx8dnw2mw::::res://Art/Simple Top Down Forest/Trees.png<>uid://0a4st2klnvhq::::res://Art/PixelWoods/Terrain(main)/terrain tiles.png<>uid://dunb3l1bh5chl::::res://Art/PixelWoods/Seasons/autumn/terrain1.png<>uid://bn6qnb6rpkohs::::res://Art/PixelWoods/Seasons/spring/terrain tiles.png<>uid://d1s6ow4s6frk4::::res://Art/PixelWoods/Seasons/winter/terrain.png<>uid://djcpcygec8ik0::::res://Art/store2.png<>uid://d33q8v7l80c8m::::res://actionable.tscn<>uid://d3d6hu1ppoj52::::res://Dialogue/main.dialogue<>uid://dqp8i1xh4hw4h::::res://Sounds/NDKG_CreepyAtmosphere_Looped - overworld.wav<>uid://bxcgcjgf81dr4::::res://Characters/Campfire.tscn<>uid://cotxf4beidr6e::::res://Characters/ghost.tscn
+cup_game.tscn::PackedScene::4697184577417445047::1701964226::0::1::::<><>::res://Levels/cup_game.gd<>res://Characters/cup.tscn
+festa_junina.tscn::PackedScene::8262515819544267973::1701966517::0::1::::<><>::uid://q6xju2ye4nr8::::res://Characters/criança.tscn<>uid://drplfd76hfqff::::res://Art/Simple Top Down Forest/GrassNDirt.png<>uid://c1h2u51eawd3g::::res://Art/Simple Top Down Forest/Cliff.png<>uid://betdmcis2hg47::::res://Art/Simple Top Down Forest/RocksnStumps.png<>uid://d1tcdx8dnw2mw::::res://Art/Simple Top Down Forest/Trees.png<>uid://0a4st2klnvhq::::res://Art/PixelWoods/Terrain(main)/terrain tiles.png<>uid://dunb3l1bh5chl::::res://Art/PixelWoods/Seasons/autumn/terrain1.png<>uid://bn6qnb6rpkohs::::res://Art/PixelWoods/Seasons/spring/terrain tiles.png<>uid://d1s6ow4s6frk4::::res://Art/PixelWoods/Seasons/winter/terrain.png<>uid://djcpcygec8ik0::::res://Art/store2.png<>uid://d33q8v7l80c8m::::res://actionable.tscn<>uid://d3d6hu1ppoj52::::res://Dialogue/main.dialogue<>uid://dqp8i1xh4hw4h::::res://Sounds/NDKG_CreepyAtmosphere_Looped - overworld.wav<>res://Scripts/TokenCount.gd<>uid://bxcgcjgf81dr4::::res://Characters/Campfire.tscn<>uid://cotxf4beidr6e::::res://Characters/ghost.tscn
 ::res://Levels/Pachinko/::1701956865
 ::res://Levels/Pachinko/addons/::1701956801
 ::res://Levels/Pachinko/addons/polygon2d_editor/::1701956887
@@ -296,15 +296,15 @@ Camera2D.gd::GDScript::-1::1701892605::0::1::::<>Camera2D<>::
 Camera2D.tscn::PackedScene::-1::1701892605::0::1::::<><>::res://Plugins/Camera2D/Camera2D.gd
 ::res://Plugins/Scripts/::1701892605
 SimpleTopDownMovement.gd::GDScript::-1::1701892605::0::1::::<>CharacterBody2D<>::
-::res://Scenes/::1701962298
+::res://Scenes/::1701964227
 ArrowButton.tscn::PackedScene::3770674308322020689::1701916054::0::1::::<><>::res://Frames/arrow_up_frames.tres<>res://Scripts/ArrowButton.gd
 Conductor.tscn::PackedScene::2851830355396244838::1701916054::0::1::::<><>::res://Scripts/Conductor.gd
 End.tscn::PackedScene::5796502438435406326::1701923430::0::1::::<><>::uid://dsr0jb0dwf6u5::::res://Sprites/ui/play_again_button/play_again1.png<>uid://coihbo3o8y00d::::res://Sprites/ui/back_to_menu_button/back_to_menu2.png<>uid://cb2pxj56uu3kh::::res://Sprites/ui/back_to_menu_button/back_to_menu1.png<>uid://du2in3bluvjrp::::res://Sprites/ui/play_again_button/play_again2.png<>res://Fonts/heartbit2x.tres<>res://Scripts/End.gd
 Game.tscn::PackedScene::4098546138426142157::1701923429::0::1::::<><>::uid://btyspp6tu8mfp::::res://Scenes/ArrowButton.tscn<>res://Frames/arrow_left_frames.tres<>res://Frames/arrow_right_frames.tres<>uid://cd6l2jpaxt6rj::::res://Sprites/game/road/road.png<>uid://cwwnnfih2y6r4::::res://Sounds/song.ogg<>res://Scripts/Game.gd<>res://Fonts/heartbit2x.tres<>uid://bgvph2cifqfpe::::res://Scenes/Conductor.tscn
-Global.tscn::PackedScene::3311005313530787089::1701962298::0::1::::<><>::res://Scripts/Global.gd<>res://Shaders/vhs.gdshader
+Global.tscn::PackedScene::3311005313530787089::1701964227::0::1::::<><>::res://Scripts/Global.gd<>res://Shaders/vhs.gdshader
 Menu.tscn::PackedScene::6467170509805614518::1701924145::0::1::::<><>::res://Scripts/Menu.gd<>uid://c5otfowsom42x::::res://Sprites/ui/play_button/play1.png<>uid://bfjybkds0dw8a::::res://Sprites/ui/play_button/play2.png<>res://Fonts/heartbit2x.tres<>uid://bn7f5f8ick5kq::::res://Sprites/ui/slider.png<>uid://c4mpc7eud17hx::::res://Sprites/ui/slider_content.png<>uid://ce2cibpn2o1jd::::res://Sprites/ui/slider_arrow2.png<>uid://dmik0tufwsf4x::::res://Sprites/ui/slider_arrow1.png<>uid://ba7sb4lp722fi::::res://Sprites/ui/test_button/test_button1.png<>uid://cwvesbfm55bct::::res://Sprites/ui/test_button/test_button2.png<>uid://xbj8g1uxsabw::::res://Sounds/bell_ding.ogg
 Note.tscn::PackedScene::1908681548873437418::1701916054::0::1::::<><>::res://Frames/note_frames.tres<>uid://clcfquhqdeakp
-::res://Scripts/::1701956999
+::res://Scripts/::1701966516
 Actionable.gd::GDScript::-1::1701956999::0::1::::<>Area2D<>::
 ArrowButton.gd::GDScript::-1::1701892605::0::1::::<>AnimatedSprite2D<>::
 Conductor.gd::GDScript::-1::1701892605::0::1::::<>AudioStreamPlayer<>::
@@ -313,9 +313,11 @@ Game.gd::GDScript::-1::1701892605::0::1::::<>Node2D<>::
 Global.gd::GDScript::-1::1701892605::0::1::::<>Node2D<>::
 Menu.gd::GDScript::-1::1701892605::0::1::::<>Node2D<>::
 Note.gd::GDScript::-1::1701892605::0::1::::<>Area2D<>::
-::res://Shaders/::1701962299
-vhs.gdshader::Shader::-1::1701962437::0::1::::<><>::
-vignette.gdshader::Shader::-1::1701962437::0::1::::<><>::
+GameState.gd::GDScript::-1::1701966516::0::1::::<>Node<>::
+TokenCount.gd::GDScript::-1::1701965889::0::1::::<>Label<>::
+::res://Shaders/::1701966518
+vhs.gdshader::Shader::-1::1701966518::0::1::::<><>::
+vignette.gdshader::Shader::-1::1701966518::0::1::::<><>::
 ::res://Sounds/::1701926098
 bell_ding.ogg::AudioStreamOggVorbis::1617013521807731768::1701892605::1701892605::1::::<><>::
 NDKG_CreepyAtmosphere_Looped - overworld.wav::AudioStreamWAV::8315268564205959009::1701919520::1701926098::1::::<><>::

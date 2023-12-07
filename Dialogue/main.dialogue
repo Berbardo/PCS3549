@@ -7,22 +7,27 @@ Shop: What do you want to buy?
 => END
 
 ~ teddy_bear
-if true:
+if GameState.token_count < 100:
 	Shop: You don't have enough money for that.
 else:
 	Shop: Here's your Teddy Bear.
+	do GameState.token_count = GameState.token_count - 100
 => END
 
 ~ match
-if true:
-	Shop: Here's your Match.
-else:
+if GameState.token_count < 10:
 	Shop: You don't have enough money for that.
+else:
+	Shop: Here's your Match.
+	do GameState.token_count = GameState.token_count - 10
 => END
 
 ~ ddr
 Minigame: Do you wish to play this game right now?
   - Yes
+	if not GameState.ddr:
+		do GameState.ddr = true
+		do GameState.completed_games += 1
 	do get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
   - No
 => END
@@ -31,6 +36,9 @@ Minigame: Do you wish to play this game right now?
 ~ cup
 Minigame: Do you wish to play this game right now?
   - Yes
+	if not GameState.cup:
+		do GameState.cup = true
+		do GameState.completed_games += 1
 	do get_tree().change_scene_to_file("res://Levels/cup_game.tscn")
   - No
 => END
@@ -38,6 +46,9 @@ Minigame: Do you wish to play this game right now?
 ~ pachinko
 Minigame: Do you wish to play this game right now?
   - Yes
+	if not GameState.pachinko:
+		do GameState.pachinko = true
+		do GameState.completed_games += 1
 	do get_tree().change_scene_to_file("res://Levels/cup_game.tscn")
   - No
 => END
