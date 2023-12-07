@@ -19,3 +19,10 @@ if true:
 else:
 	Shop: You don't have enough money for that.
 => END
+
+~ ddr
+Minigame: Do you wish to play this game right now?
+  - Yes
+	do get_tree().change_scene_to_file("res://Scenes/Menu.tscn")
+  - No
+=> END

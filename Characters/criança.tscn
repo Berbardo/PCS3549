@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://q6xju2ye4nr8"]
 
-[ext_resource type="Texture2D" uid="uid://daymfunnbgxw4" path="res://Art/Pixel-RPG_Prototype_v003/Sprites/Prototype/Prototype_Worksheet.png" id="1_6a10r"]
 [ext_resource type="Script" path="res://Characters/criança.gd" id="1_vrhcj"]
+[ext_resource type="Texture2D" uid="uid://c1uqpu1flm2p1" path="res://Art/Main_Character.png" id="2_6umq6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0jvhn"]
 size = Vector2(12, 5)
@@ -416,7 +416,7 @@ radius = 6.0
 script = ExtResource("1_vrhcj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_6a10r")
+texture = ExtResource("2_6umq6")
 hframes = 4
 vframes = 12
 frame = 4

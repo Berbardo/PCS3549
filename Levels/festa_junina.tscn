@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dpyoothatyyjd"]
+[gd_scene load_steps=30 format=3 uid="uid://dpyoothatyyjd"]
 
 [ext_resource type="PackedScene" uid="uid://q6xju2ye4nr8" path="res://Characters/criança.tscn" id="1_6vvtr"]
 [ext_resource type="Shader" path="res://Shaders/vignette.gdshader" id="1_ehs8q"]
@@ -14,6 +14,20 @@
 [ext_resource type="Texture2D" uid="uid://djcpcygec8ik0" path="res://Art/store2.png" id="12_jvwt4"]
 [ext_resource type="PackedScene" uid="uid://d33q8v7l80c8m" path="res://actionable.tscn" id="13_i2ko7"]
 [ext_resource type="Resource" uid="uid://d3d6hu1ppoj52" path="res://Dialogue/main.dialogue" id="14_xqc03"]
+[ext_resource type="AudioStream" uid="uid://dqp8i1xh4hw4h" path="res://Sounds/NDKG_CreepyAtmosphere_Looped - overworld.wav" id="15_vjgdl"]
+
+[sub_resource type="Gradient" id="Gradient_ogbs0"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.683871)
+colors = PackedColorArray(1, 0.905882, 0.8, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w8jc4"]
+gradient = SubResource("Gradient_ogbs0")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sbi2s"]
 texture = ExtResource("2_pk1xe")
@@ -2336,8 +2350,16 @@ y_sort_enabled = true
 position = Vector2(416, -204)
 scale = Vector2(1.75, 1.75)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Criança"]
+[node name="PointLight2D" type="PointLight2D" parent="Criança"]
+scale = Vector2(1, 1)
+texture = SubResource("GradientTexture2D_w8jc4")
+texture_scale = 0.6
+
+[node name="FollowCamera" type="RemoteTransform2D" parent="Criança"]
 remote_path = NodePath("../../Camera2D")
+
+[node name="FollowLight" type="RemoteTransform2D" parent="Criança"]
+remote_path = NodePath("../PointLight2D")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -2371,6 +2393,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 4.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Vignette" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_jmici")
@@ -2378,12 +2401,14 @@ custom_minimum_size = Vector2(320, 240)
 offset_right = 640.0
 offset_bottom = 480.0
 color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="VHS" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_yy1sg")
 custom_minimum_size = Vector2(320, 240)
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Texts" type="Node" parent="."]
 
@@ -2411,6 +2436,26 @@ offset_bottom = -359.0
 scale = Vector2(0.5, 0.5)
 text = "<- Minigame 1"
 
+[node name="DDR" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-96, -438)
+
+[node name="Sprite2D" type="Sprite2D" parent="DDR"]
+y_sort_enabled = true
+texture = ExtResource("12_jvwt4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DDR"]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_kuiu6")
+
+[node name="Actionable" parent="DDR" instance=ExtResource("13_i2ko7")]
+position = Vector2(-99, -422)
+dialogue_resource = ExtResource("14_xqc03")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DDR/Actionable"]
+position = Vector2(99, 436)
+shape = SubResource("RectangleShape2D_kuiu6")
+
 [node name="Shop" type="StaticBody2D" parent="."]
 y_sort_enabled = true
 
@@ -2429,3 +2474,10 @@ dialogue_resource = ExtResource("14_xqc03")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shop/Actionable"]
 position = Vector2(415, -232)
 shape = SubResource("RectangleShape2D_kuiu6")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_vjgdl")
+autoplay = true

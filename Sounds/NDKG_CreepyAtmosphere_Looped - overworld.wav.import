@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqp8i1xh4hw4h"
+path="res://.godot/imported/NDKG_CreepyAtmosphere_Looped - overworld.wav-2ed9f19f13b16acf8fe523c7e3cf21e2.sample"
+
+[deps]
+
+source_file="res://Sounds/NDKG_CreepyAtmosphere_Looped - overworld.wav"
+dest_files=["res://.godot/imported/NDKG_CreepyAtmosphere_Looped - overworld.wav-2ed9f19f13b16acf8fe523c7e3cf21e2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,34 +1,34 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=9 format=3 uid="uid://bynmpril5ln1n"]
 
-[ext_resource path="res://Scenes/ArrowButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Frames/arrow_left_frames.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://Frames/arrow_right_frames.tres" type="SpriteFrames" id=3]
-[ext_resource path="res://Sprites/game/road/road.png" type="Texture2D" id=4]
-[ext_resource path="res://Sounds/song.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Scripts/Game.gd" type="Script" id=6]
-[ext_resource path="res://Fonts/heartbit2x.tres" type="FontFile" id=7]
-[ext_resource path="res://Scenes/Conductor.tscn" type="PackedScene" id=8]
+[ext_resource type="PackedScene" uid="uid://btyspp6tu8mfp" path="res://Scenes/ArrowButton.tscn" id="1"]
+[ext_resource type="SpriteFrames" path="res://Frames/arrow_left_frames.tres" id="2"]
+[ext_resource type="SpriteFrames" path="res://Frames/arrow_right_frames.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://cd6l2jpaxt6rj" path="res://Sprites/game/road/road.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://cwwnnfih2y6r4" path="res://Sounds/song.ogg" id="5"]
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="6"]
+[ext_resource type="FontFile" path="res://Fonts/heartbit2x.tres" id="7"]
+[ext_resource type="PackedScene" uid="uid://bgvph2cifqfpe" path="res://Scenes/Conductor.tscn" id="8"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource( 6 )
+script = ExtResource("6")
 
 [node name="road" type="Sprite2D" parent="."]
-position = Vector2( 100, 0 )
-texture = ExtResource( 4 )
+position = Vector2(100, 0)
+texture = ExtResource("4")
 centered = false
 
-[node name="ArrowUp" parent="." instance=ExtResource( 1 )]
-position = Vector2( 160, 164 )
+[node name="ArrowUp" parent="." instance=ExtResource("1")]
+position = Vector2(160, 164)
 input = "up"
 
-[node name="ArrowLeft" parent="." instance=ExtResource( 1 )]
-position = Vector2( 120, 164 )
-frames = ExtResource( 2 )
+[node name="ArrowLeft" parent="." instance=ExtResource("1")]
+position = Vector2(120, 164)
+sprite_frames = ExtResource("2")
 input = "left"
 
-[node name="ArrowButton" parent="." instance=ExtResource( 1 )]
-position = Vector2( 200, 164 )
-frames = ExtResource( 3 )
+[node name="ArrowButton" parent="." instance=ExtResource("1")]
+position = Vector2(200, 164)
+sprite_frames = ExtResource("3")
 input = "right"
 
 [node name="Label" type="Label" parent="."]
@@ -36,28 +36,22 @@ offset_left = 4.0
 offset_top = 4.0
 offset_right = 44.0
 offset_bottom = 18.0
-theme_override_fonts/font = ExtResource( 7 )
-theme_override_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
+theme_override_colors/font_color = Color(0.964706, 0.839216, 0.741176, 1)
+theme_override_fonts/font = ExtResource("7")
 text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Combo" type="Label" parent="."]
 offset_left = 4.0
 offset_top = 20.0
 offset_right = 96.0
 offset_bottom = 34.0
-theme_override_fonts/font = ExtResource( 7 )
-theme_override_colors/font_color = Color( 0.964706, 0.839216, 0.741176, 1 )
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_colors/font_color = Color(0.964706, 0.839216, 0.741176, 1)
+theme_override_fonts/font = ExtResource("7")
 
-[node name="Conductor" parent="." instance=ExtResource( 8 )]
-stream = ExtResource( 5 )
+[node name="Conductor" parent="." instance=ExtResource("8")]
+stream = ExtResource("5")
 volume_db = -15.0
 bpm = 115
+
 [connection signal="Beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="Measure" from="Conductor" to="." method="_on_Conductor_measure"]
