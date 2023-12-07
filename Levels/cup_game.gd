@@ -4,7 +4,7 @@ var BUTTON_LEFT = 1
 var cup
 var start = 0
 var steps = 0
-var score = 0 
+var score = -1 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -72,6 +72,7 @@ func cup_open(has_ball : bool):
 	if has_ball: 
 		print("Correct")
 		score = score + 1
+		$Score.text = str(score)
 	else: 
 		print("Error")
 	for c in cup:
