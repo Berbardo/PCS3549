@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bynmpril5ln1n"]
+[gd_scene load_steps=16 format=3 uid="uid://bynmpril5ln1n"]
 
 [ext_resource type="PackedScene" uid="uid://btyspp6tu8mfp" path="res://Scenes/ArrowButton.tscn" id="1"]
 [ext_resource type="SpriteFrames" path="res://Frames/arrow_left_frames.tres" id="2"]
@@ -8,27 +8,65 @@
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="6"]
 [ext_resource type="FontFile" path="res://Fonts/heartbit2x.tres" id="7"]
 [ext_resource type="PackedScene" uid="uid://bgvph2cifqfpe" path="res://Scenes/Conductor.tscn" id="8"]
+[ext_resource type="Texture2D" uid="uid://c2jmsvwq35an4" path="res://Sprites/game/kobeni/kobeni-frames.png" id="9_vtfts"]
+[ext_resource type="Script" path="res://Scripts/Kobeni.gd" id="10_6t6pa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjeap"]
+atlas = ExtResource("9_vtfts")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xui4b"]
+atlas = ExtResource("9_vtfts")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0nqi"]
+atlas = ExtResource("9_vtfts")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4vag"]
+atlas = ExtResource("9_vtfts")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jexxc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjeap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xui4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0nqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4vag")
+}],
+"loop": true,
+"name": &"kobeni_dance",
+"speed": 5.0
+}]
 
 [node name="Game" type="Node2D"]
 scale = Vector2(4, 4)
 script = ExtResource("6")
 
 [node name="road" type="Sprite2D" parent="."]
-position = Vector2(100, 0)
+position = Vector2(160, 23)
 texture = ExtResource("4")
 centered = false
 
 [node name="ArrowUp" parent="." instance=ExtResource("1")]
-position = Vector2(160, 164)
+position = Vector2(220, 187)
 input = "up"
 
 [node name="ArrowLeft" parent="." instance=ExtResource("1")]
-position = Vector2(120, 164)
+position = Vector2(180, 187)
 sprite_frames = ExtResource("2")
 input = "left"
 
 [node name="ArrowButton" parent="." instance=ExtResource("1")]
-position = Vector2(200, 164)
+position = Vector2(260, 187)
 sprite_frames = ExtResource("3")
 input = "right"
 
@@ -53,6 +91,12 @@ theme_override_fonts/font = ExtResource("7")
 stream = ExtResource("5")
 volume_db = -15.0
 bpm = 115
+
+[node name="Kobeni" type="AnimatedSprite2D" parent="."]
+position = Vector2(81.5, 138.25)
+sprite_frames = SubResource("SpriteFrames_jexxc")
+animation = &"kobeni_dance"
+script = ExtResource("10_6t6pa")
 
 [connection signal="Beat" from="Conductor" to="." method="_on_Conductor_beat"]
 [connection signal="Measure" from="Conductor" to="." method="_on_Conductor_measure"]
