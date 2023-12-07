@@ -2501,7 +2501,6 @@ dialogue_resource = ExtResource("14_xqc03")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostDDR/Actionable"]
 position = Vector2(135, 461)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sfwjd")
 
 [node name="PointLightDDR" type="PointLight2D" parent="GhostDDR"]
@@ -2524,7 +2523,6 @@ dialogue_start = "cup"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostCup/Actionable"]
 position = Vector2(135, 463)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sfwjd")
 
 [node name="PointLightDDR" type="PointLight2D" parent="GhostCup"]
@@ -2547,7 +2545,6 @@ dialogue_start = "pachinko"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostPachinko/Actionable"]
 position = Vector2(135, 459)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sfwjd")
 
 [node name="PointLightDDR" type="PointLight2D" parent="GhostPachinko"]

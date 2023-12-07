@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b76l7c7c1aim6"]
+[gd_scene load_steps=4 format=3 uid="uid://b76l7c7c1aim6"]
 
 [ext_resource type="Script" path="res://Levels/cup_game.gd" id="1_lan5t"]
-[ext_resource type="PackedScene" path="res://Characters/cup.tscn" id="1_u7q0s"]
+[ext_resource type="PackedScene" uid="uid://n5c68l8likjd" path="res://Characters/cup.tscn" id="1_u7q0s"]
+[ext_resource type="AudioStream" uid="uid://i3whbysnw0cr" path="res://Sounds/Desert.wav" id="3_of670"]
 
 [node name="cup_game" type="Node2D"]
 script = ExtResource("1_lan5t")
@@ -38,3 +39,32 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 context_menu_enabled = true
+
+[node name="ScoreLabel" type="RichTextLabel" parent="."]
+offset_left = -50.0
+offset_top = -169.0
+offset_right = -1.0
+offset_bottom = -129.0
+scale = Vector2(1.04, 1)
+text = "Score:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+context_menu_enabled = true
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_left = 21.0
+offset_top = -169.0
+offset_right = 70.0
+offset_bottom = -129.0
+scale = Vector2(1.04, 1)
+text = "0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+context_menu_enabled = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_of670")
+volume_db = -10.306
+autoplay = true

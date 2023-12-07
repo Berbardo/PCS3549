@@ -1,15 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://n5c68l8likjd"]
+[gd_scene load_steps=10 format=3 uid="uid://n5c68l8likjd"]
 
-[ext_resource type="Texture2D" uid="uid://c1h2u51eawd3g" path="res://Art/Simple Top Down Forest/Cliff.png" id="1_c21vt"]
 [ext_resource type="Script" path="res://Characters/cup.gd" id="1_cc3mu"]
-[ext_resource type="Texture2D" uid="uid://d1tcdx8dnw2mw" path="res://Art/Simple Top Down Forest/Trees.png" id="2_l4qje"]
-[ext_resource type="Texture2D" uid="uid://betdmcis2hg47" path="res://Art/Simple Top Down Forest/RocksnStumps.png" id="3_psy0p"]
+[ext_resource type="Texture2D" uid="uid://i31blgh6tti2" path="res://Sprites/game/cup-minigame/cup.png" id="2_tjv2h"]
+[ext_resource type="Texture2D" uid="uid://b8a4pybxs8g51" path="res://Sprites/game/cup-minigame/cup_ball.png" id="3_gpob7"]
+[ext_resource type="Texture2D" uid="uid://mps3x7p450pj" path="res://Sprites/game/cup-minigame/cup_noball.png" id="4_df508"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ko8vf"]
+atlas = ExtResource("2_tjv2h")
+region = Rect2(0, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ii4rq"]
+atlas = ExtResource("3_gpob7")
+region = Rect2(0, 0, 64, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3pp2"]
+atlas = ExtResource("4_df508")
+region = Rect2(0, 0, 64, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y78ll"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_c21vt")
+"texture": SubResource("AtlasTexture_ko8vf")
 }],
 "loop": true,
 "name": &"cup",
@@ -17,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_l4qje")
+"texture": SubResource("AtlasTexture_ii4rq")
 }],
 "loop": true,
 "name": &"cup_ball",
@@ -25,7 +37,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_psy0p")
+"texture": SubResource("AtlasTexture_w3pp2")
 }],
 "loop": true,
 "name": &"cup_no_ball",
@@ -39,10 +51,10 @@ size = Vector2(11, 10)
 script = ExtResource("1_cc3mu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 2.98023e-08)
-scale = Vector2(0.0825893, 0.08125)
+position = Vector2(0, -3)
+scale = Vector2(0.18471, 0.176953)
 sprite_frames = SubResource("SpriteFrames_y78ll")
-animation = &"cup"
+animation = &"cup_no_ball"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cdqtt")
