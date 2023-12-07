@@ -24,13 +24,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 			actionables[0].action()
 			return
 
-func _process(delta) -> void:
-	# convert player position to UV position
-	var camera_position = camera2D.get_screen_center_position()
-	var player_position_relative_to_camera_uv = (global_position - camera_position) / screen_dimensions * 2 + Vector2(0.25, 0.25)
-	# Set shader to player position
-	get_parent().get_node("CanvasLayer/Vignette").material.set_shader_parameter("player_position", player_position_relative_to_camera_uv)
-
 func _physics_process(_delta):
 	# Get input direction
 	var input_direction = Vector2(
