@@ -44,6 +44,7 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="TokenCount" type="Label" parent="CanvasLayer/VHS"]
+layout_mode = 0
 offset_left = 2.75
 offset_top = 230.75
 offset_right = 210.75
